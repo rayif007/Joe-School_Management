@@ -1,0 +1,18 @@
+{% extends 'school_app/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}Add Student - Joe English Medium School{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Add New Student</h2>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary mt-3">Add Student</button>
+    </form>
+    <p class="mt-4">Go back to the <a href="{% url 'school_app:student_list' %}">Student List</a>.</p>
+</div>
+{% endblock %}
+

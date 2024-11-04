@@ -1,0 +1,22 @@
+{% extends 'school_app/base.html' %}
+{% load crispy_forms_tags %}
+{% load static%}
+
+{% block title %}Register - Joe English Medium School{% endblock %}
+
+{% block content %}
+<div class="auth-bg">
+    <div class="container p-4 rounded auth-container">
+        <h2 class="text-center">Register</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <p class="mt-3">Already have an account? <a href="{% url 'school_app:login_user' %}">Login here</a>.</p>
+    </div>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,38 @@
+{% extends 'school_app/base.html' %}
+
+{% block title %}Library Records - Joe English Medium School{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Library Records</h2>
+    <a href="{% url 'school_app:add_library_record' %}" class="btn btn-primary mb-3">Add New Library Record</a>
+    
+    {% if library_records %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Book Title</th>
+                    <th>Borrow Date</th>
+                    <th>Return Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in library_records %}
+                <tr>
+                    <td>{{ record.student.first_name }} {{ record.student.last_name }}</td>
+                    <td>{{ record.book_title }}</td>
+                    <td>{{ record.borrow_date }}</td>
+                    <td>{{ record.return_date|default:"Not Returned" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            No library records found.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+

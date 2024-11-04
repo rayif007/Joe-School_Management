@@ -1,0 +1,18 @@
+{% extends 'school_app/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Edit Student - Joe English Medium School{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Edit Student</h2>
+    <p class="lead">Make the necessary changes for the student below:</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary mt-3">Update Student</button>
+        <a href="{% url 'school_app:student_list' %}" class="btn btn-secondary mt-3">Cancel</a>
+    </form>
+</div>
+{% endblock %}
+

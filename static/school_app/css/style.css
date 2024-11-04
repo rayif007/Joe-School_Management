@@ -1,0 +1,203 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1c1c1c;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+/* Home Page Styles */
+.home-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('../images/home.jpg') center/cover fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.home-bg h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.home-bg p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 600px;
+    margin: 1rem auto;
+}
+
+/* Authentication Pages */
+.auth-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('../images/login_and_registration.jpg') center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.auth-container {
+    background: rgba(33, 33, 33, 0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Styles */
+.btn {
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-weight: 500;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary,
+.btn-success {
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Table Styles */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table {
+    margin-top: 1.5rem;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.table thead th {
+    background-color: #333;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+.table tbody tr:hover {
+    background-color: #444;
+    transition: background-color 0.2s ease;
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 1rem 2rem;
+    background-color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #d3d3d3;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+/* Form Styles */
+.form-control,
+.form-select {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #555;
+    border-radius: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    
+    .auth-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .table th,
+    .table td {
+        padding: 0.75rem;
+    }
+}
+
+/* Utility Classes */
+.shadow-sm {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+

@@ -1,0 +1,16 @@
+{% extends 'school_app/base.html' %}
+
+
+{% block title %}Home - Joe English Medium School{% endblock %}
+
+{% block content %}
+<div class="home-bg">
+    <div class="container text-center text-light py-5">
+        <h1 class="display-4">Welcome to Joe English Medium School</h1>
+        <p class="lead mb-4">Empowering students to achieve their best.</p>
+        <a href="{% url 'school_app:login_user' %}" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+</div>
+{% endblock %}
+
+

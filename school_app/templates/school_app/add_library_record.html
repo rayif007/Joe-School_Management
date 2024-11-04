@@ -1,0 +1,17 @@
+{% extends 'school_app/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Add Library Record - Joe English Medium School{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Add Library Record</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary mt-3">Save Record</button>
+    </form>
+    <p class="mt-3">Back to <a href="{% url 'school_app:library_list' %}">Library Records</a>.</p>
+</div>
+{% endblock %}
+

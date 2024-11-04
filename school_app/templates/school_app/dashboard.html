@@ -1,0 +1,82 @@
+{% extends 'school_app/base.html' %}
+
+{% load static%}
+
+{% block title %}Dashboard - Joe English Medium School{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Welcome Section -->
+    <div class="welcome-section text-center mb-5 p-5">
+        <h2 class="display-4">Welcome, {{ user.username }}!</h2>
+        <p class="lead">Manage your school's resources from one central location</p>
+    </div>
+
+    <!-- Messages Section -->
+    {% if messages %}
+        <div class="alert alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+                <div>{{ message }}</div>
+            {% endfor %}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+
+    <!-- Main Cards Row -->
+    <div class="row">
+        <!-- Students Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card h-100 text-light bg-primary">
+                <div class="card-body text-center">
+                    <div class="icon-box">
+                        <i class="fas fa-users fa-3x"></i>
+                    </div>
+                    <h5 class="card-title">Students</h5>
+                    <p class="card-text">Manage student records and information</p>
+                    <div class="mt-auto">
+                        <a href="{% url 'school_app:student_list' %}" class="btn btn-light mr-2">View List</a>
+                        <a href="{% url 'school_app:add_student' %}" class="btn btn-success">Add New</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Library Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card h-100 text-light bg-secondary">
+                <div class="card-body text-center">
+                    <div class="icon-box">
+                        <i class="fas fa-book fa-3x"></i>
+                    </div>
+                    <h5 class="card-title">Library</h5>
+                    <p class="card-text">Track book loans and returns</p>
+                    <div class="mt-auto">
+                        <a href="{% url 'school_app:library_list' %}" class="btn btn-light mr-2">View Records</a>
+                        <a href="{% url 'school_app:add_library_record' %}" class="btn btn-success">Add Record</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fees Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card h-100 text-light bg-success">
+                <div class="card-body text-center">
+                    <div class="icon-box">
+                        <i class="fas fa-money-bill fa-3x"></i>
+                    </div>
+                    <h5 class="card-title">Fees</h5>
+                    <p class="card-text">Manage student fees and payments</p>
+                    <div class="mt-auto">
+                        <a href="{% url 'school_app:fees_list' %}" class="btn btn-light mr-2">View Fees</a>
+                        <a href="{% url 'school_app:add_fees_record' %}" class="btn btn-success">Add Payment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
